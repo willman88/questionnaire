@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <body>
+      
+    <form name="myform">
+      <label for="uid">User ID:</label> 
+      <input type = "text" name ="uid" id="uid" required>
+      <label for="fname">Name:</label> 
+      <input type = "text" name ="fname" id="fname" required>
+      <label for="pcode">Postcode:</label> 
+      <input type = "text" name ="pcode" id="pcode" required>
+      <input type ="button" value="submit" onclick="validateForm()">
+    </form>
+
+    <script>
+        function validateForm(){
+            let userId = document.forms["myform"]["uid"].value;
+            let userIdRegEx = /^\d{4}/;
+            let userIdResult = userIdRegEx.test(userId);
+            if(userIdResult == false) {
+                alert("Please enter a numerical four digit User ID");
+                return false;
+            }
+
+            let postCode = document.forms["myform"]["pcode"].value;
+            let postRegEx = /^[A-Z]{1,2}[0-9]{1,2} ?[0-9][A-Z]{2}$/i;
+            let postResult = postRegEx.test(postCode);
+            if(postResult == false) {
+                alert("Please enter a valid post code");
+                return false;
+            }
+        }
+     </script>
+
+  </body>
+</html>

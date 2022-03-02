@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <body>
+      
+    <form name="myform">
+      <label for="fname">Name:</label> 
+      <input type = "text" name ="fname" id="fname">
+      <label for="sname">Surname:</label> 
+      <input type = "text" name ="sname" id="sname">
+      <input type ="button" value="submit" onclick="validateForm()">
+    </form>
+
+    <script>
+        function validateForm(){
+          let x = document.forms["myform"]["fname"].value;
+          if (x == ""){
+            alert("name must be filled out");
+            return false;
+          }
+          let y = document.forms["myform"]["sname"].value;
+          if (y == ""){
+            alert("name must be filled out");
+            return false;
+          }
+        }
+     </script>
+
+  </body>
+</html>
